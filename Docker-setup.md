@@ -76,7 +76,7 @@ chown -R 1000:1000 "$HOME/.openclaw"
 
 * **Run Onboarding Wizard:**
 ```bash
-docker compose run onboard
+docker compose run --rm openclaw-gateway node dist/index.js onboard
 
 ```
 
