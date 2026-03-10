@@ -64,7 +64,8 @@ docker compose up -d
 [[02:23](http://www.youtube.com/watch?v=Zqnzg6W9rjY&t=143)]
 * **Fix Permissions:** Update ownership of the config directory:
 ```bash
-chown -R 1000:1000 /root/.openclaw
+-- chown -R 1000:1000 /root/.openclaw
+chown -R 1000:1000 $HOME/.openclaw
 
 ```
 
