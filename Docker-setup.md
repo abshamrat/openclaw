@@ -37,7 +37,7 @@ cd open-claw
 [[00:53](http://www.youtube.com/watch?v=Zqnzg6W9rjY&t=53)]
 * **Export the Alpine Image Variable:**
 ```bash
-export OPENCLAW_IMAGE=alfane/openclaw:latest
+export OPENCLAW_IMAGE="ghcr.io/openclaw/openclaw:latest"
 
 ```
 
@@ -47,6 +47,8 @@ export OPENCLAW_IMAGE=alfane/openclaw:latest
 ```text
 OPENCLAW_CONFIG_DIR=/root/.openclaw/config
 OPENCLAW_WORKSPACE_DIR=/root/.openclaw/workspace
+
+/root/ can be your $HOME
 
 ```
 
@@ -80,6 +82,13 @@ docker compose run --rm openclaw-gateway node dist/index.js onboard
 
 ```
 
+### Control UI token + pairing (Docker)
+If you see “unauthorized” or “disconnected (1008): pairing required”, fetch a fresh dashboard link and approve the browser device:
+```bash
+docker compose run --rm openclaw-cli dashboard --no-open
+docker compose run --rm openclaw-cli devices list
+docker compose run --rm openclaw-cli devices approve <requestId>
+```
 
 [[03:16](http://www.youtube.com/watch?v=Zqnzg6W9rjY&t=196)]
 * **Configure Google Gemini:** Follow the prompts to enter your API key from Google AI Studio [[03:32](http://www.youtube.com/watch?v=Zqnzg6W9rjY&t=212)].
